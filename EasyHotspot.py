@@ -1,0 +1,45 @@
+
+
+#!/usr/bin/python
+
+# 789sk.gupta@gmail.com 
+# Python hotspotconverter for Unix based systems 
+
+
+
+
+import os
+import sys	
+
+import time
+
+#def pyhotspot(hotspotname,ssid,password):
+
+#	os.system("nmcli device wifi hotspot con-name"+ hotspotname +"ssid"+ ssid +"password" + password)
+
+def info():
+	os.system("clear")
+	print "#############################"
+	print "#        python$tuff   #"
+	print "#############################"
+	print "# Welcome to Pythonhostpotmaker #"
+	print "#############################"
+
+	hotspotname = raw_input ("\nHotspot connection-name : ")
+	ssid = raw_input ("Type ssid : ")
+	passw = raw_input ("type wiffi password")
+
+	os.system("nmcli device wifi hotspot con-name linuxhotspot ssid "  +  ssid + "password " + passw)
+	
+	#return hotspotname,ssid, int(password)
+	
+
+def main():
+#	hotspotname,ssid,password = info()
+	# counter = input ("How many packets do you want to send : ")
+#	pyhotspot(hotspotname,ssid,password)
+	info()
+#	os.system("nmcli device wifi hotspot con-name linuxhotspot ssid" + ssid + "password" + password)
+	
+main()
+
