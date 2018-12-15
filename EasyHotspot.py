@@ -28,6 +28,8 @@ def info():
 	hotspotname = raw_input ("\nHotspot connection-name : ")
 	ssid = raw_input ("Type ssid : ")
 	passw = raw_input ("type wiffi password")
+	
+ 	os.system("echo 1 > /proc/sys/net/ipv4/ip_forward") # os system commad to enbale the kernal ip forwarding temporarily
 
 	os.system("nmcli device wifi hotspot con-name linuxhotspot ssid "  +  ssid + "password " + passw)
 	
