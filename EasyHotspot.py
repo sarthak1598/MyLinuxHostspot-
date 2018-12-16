@@ -22,14 +22,16 @@ def info():
 	print "#############################"
 	print "#        python$tuff   #"
 	print "#############################"
-	print "# Welcome to Pythonhostpotmaker #"
+	print "# Welcome To PyHotspot #"
 	print "#############################"
 
 	hotspotname = raw_input ("\nHotspot connection-name : ")
 	ssid = raw_input ("Type ssid : ")
 	passw = raw_input ("type wiffi password")
 	
- 	os.system("echo 1 > /proc/sys/net/ipv4/ip_forward") # os system commad to enbale the kernal ip forwarding temporarily
+	os.system("sudo iptables -F INPUT") # flushed iptable rules 
+	
+	os.system("echo 1 > /proc/sys/net/ipv4/ip_forward") # os system commad to enbale the kernal ip forwarding temporarily.
 
 	os.system("nmcli device wifi hotspot con-name linuxhotspot ssid "  +  ssid + "password " + passw)
 	
