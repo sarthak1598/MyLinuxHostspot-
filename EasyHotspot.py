@@ -8,10 +8,8 @@
 import os
 import sys	
 
-import time
-
+import datetime 
 #def pyhotspot(hotspotname,ssid,password):
-
 
 def info():
 	
@@ -27,14 +25,17 @@ def info():
 	
 	passw = raw_input ("type wiffi password : ")
 	
+	current_time = datetime.now()
 	os.system("sudo iptables -F INPUT") # flushed iptable rules 
 	
 	os.system("echo 1 > /proc/sys/net/ipv4/ip_forward") # os system commad to enbale the kernal ip forwarding temporarily.
-
-	os.system("nmcli device wifi hotspot con-name linuxhotspot ssid "  +  ssid + " password " + passw)
 	
-	#return hotspotname,ssid, int(password)
+        os.system("nmcli device wifi hotspot con-name linuxhotspot ssid "  +  ssid + " password " + passw)
 	
+	final_time = datetime.now()
+	exec_time = final_time - current_time 
+	print(exec_time)
+# function ends 
 
 def main():
 #	hotspotname,ssid,password = info()
