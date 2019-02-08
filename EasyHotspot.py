@@ -29,8 +29,9 @@ def info():
 	os.system("sudo iptables -F INPUT") # flushed iptable rules 
 	
 	os.system("echo 1 > /proc/sys/net/ipv4/ip_forward") # os system commad to enbale the kernal ip forwarding temporarily.
+	# data type conversion as string 
 	
-        os.system("nmcli device wifi hotspot con-name linuxhotspot ssid "  +  ssid + " password " + passw)
+        os.system("nmcli device wifi hotspot con-name linuxhotspot ssid "  +  str(ssid) + " str(password) " + str(passw))
 	
 	final_time = datetime.now()
 	exec_time = final_time - current_time 
